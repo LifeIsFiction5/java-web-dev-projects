@@ -1,16 +1,22 @@
 package org.launchcode;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
 public class MenuItem {
+    private String itemName;
     private double price;
     private String description;
     private String category;
     private boolean isNew;
+    private final LocalDate dateAdded;
 
-    public MenuItem(double p, String d, String c, boolean iN) {
-        this.price = p;
-        this.description = d;
-        this.category = c;
-        this.isNew = iN;
+    public MenuItem(String name, double price, String description, String category, String dateAdded) {
+        this.itemName = name;
+        this.price = price;
+        this.description = description;
+        this.category = category;
+        this.dateAdded = LocalDate.parse(dateAdded);
     }
 
     public void setPrice(double price) {
@@ -25,8 +31,32 @@ public class MenuItem {
         this.category = category;
     }
 
-    public void setNew(boolean aNew) {
-        isNew = aNew;
+    public double getPrice() {
+        return price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public LocalDate getDateAdded() {
+        return dateAdded;
+    }
+
+    boolean isNew() {
+        LocalDate today = LocalDate.now();
+        double daysOnMenu = getDateAdded().until(today, ChronoUnit.DAYS);
+        return daysOnMenu < 30;
+    }
+
+    @Override
+    public String toString() {
+        String checkNew = isNew() ? "*** NEW ITEM ***" : "";
+        return itemName + checkNew + "\n" + description + " | $" + price;
     }
 }
 
