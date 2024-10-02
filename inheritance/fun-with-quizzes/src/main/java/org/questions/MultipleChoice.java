@@ -3,7 +3,7 @@ package org.questions;
 
 public class MultipleChoice extends Question {
 
-        public MultipleChoice(Sting Question, Choice[] choiceArray) {
+        public MultipleChoice(String question, Choice[] choiceArray) {
             super(question, choiceArray);
         }
 

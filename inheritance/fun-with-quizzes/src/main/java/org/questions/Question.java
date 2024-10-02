@@ -1,4 +1,5 @@
 package org.questions;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Collections;
@@ -12,6 +13,7 @@ public abstract class Question {
     // For questions with choices
     public Question(String question, Choice[] choiceArray) {
         this.question = question;
+        createRandomizedChoiceMap(choiceArray);
 
     }
 
@@ -30,6 +32,7 @@ public abstract class Question {
     public void setMaxResponses(int maxResponses) {
         this.maxResponses = maxResponses;
     }
+
 
 
     @Override

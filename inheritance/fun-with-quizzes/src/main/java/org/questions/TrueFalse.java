@@ -2,7 +2,7 @@ package org.questions;
 
 public class TrueFalse extends Question {
 
-    public MultipleChoice(Sting Question, Choice[] choiceArray) {
+    public TrueFalse(String question, Choice[] choiceArray) {
         super(question, choiceArray);
     }
 
