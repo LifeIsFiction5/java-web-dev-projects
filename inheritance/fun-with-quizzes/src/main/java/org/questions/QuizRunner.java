@@ -1,6 +1,7 @@
 package org.questions;
 import java.awt.*;
 import org.questions.Quiz;
+import org.questions.CheckboxQuestion;
 
 public class QuizRunner {
 
@@ -15,7 +16,7 @@ public class QuizRunner {
                 new Choice("Wives and Daughters"),
                 new Choice("Mansfield Park", true)
         };
-        Checkbox question1 = new Checkbox(q1, q1Choices);
+        CheckboxQuestion question1 = new CheckboxQuestion(q1, q1Choices);
 
         String q2 = "The most-published author of all time is Agatha Christie.";
         Choice[] q2Choices = new Choice[] {
@@ -24,7 +25,7 @@ public class QuizRunner {
         };
         TrueFalse question2 = new TrueFalse(q2, q2Choices);
 
-        String q3 = "Which poem di history-making poet Amanda Gorman recite at the U.S. presidential inauguration in 2021?";
+        String q3 = "Which poem did history-making poet Amanda Gorman recite at the U.S. presidential inauguration in 2021?";
         Choice[] q3Choices = new Choice[] {
                 new Choice("The Hill We Climb", true),
                 new Choice("The Miracle of Morning"),
@@ -33,7 +34,6 @@ public class QuizRunner {
         };
 
         MultipleChoice question3 = new MultipleChoice(q3, q3Choices);
-
 
         quiz.addQuestions(new Question[] { question1, question2, question3 });
 

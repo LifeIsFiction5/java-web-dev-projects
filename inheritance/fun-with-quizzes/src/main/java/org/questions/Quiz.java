@@ -62,8 +62,7 @@ public class Quiz {
                     i++;
                 }
             }
-
-            input.close();
         }
+        input.close();
     }
 }
